@@ -1,3 +1,9 @@
+/*
+* Code to concatenate the elements of two separate arrays into two separate
+* integer variables. The integer variables are then multiplied together and the result
+* is inserted, digit by digit, back into a third array.
+*/
+
 #include <iostream>
 #include <vector>
 
@@ -12,14 +18,10 @@ int main() {
 
     for (int i = 0; i < A.size(); i++) {
         resultA = (resultA * 10) + A[i];
-        cout << resultA << endl;
     }
-
-    cout << "******" << endl;
 
     for (int i = 0; i < B.size(); i++) {
         resultB = (resultB * 10) + B[i];
-        cout << resultB << endl << endl;
     }
 
     result = resultA * resultB;
