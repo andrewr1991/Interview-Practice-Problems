@@ -1,7 +1,7 @@
 /*
 * Code to concatenate the elements of two separate arrays into two separate
 * integer variables. The integer variables are then multiplied together and the result
-* is inserted, digit by digit, back into a third array.
+* is "unconcatenated" and inserted, digit by digit, back into a third array and returned to main.
 */
 
 #include <iostream>
@@ -9,9 +9,7 @@
 
 using namespace std;
 
-int main() {
-    vector<int> A = {1, 4, 8, 3};
-    vector<int> B = {4, 7, 9, 2};
+vector<int> precisionInteger(vector<int> A, vector<int> B) {
     vector<int> X;
 
     int resultA = 0, resultB = 0, result = 0, digit = 0;
@@ -33,8 +31,18 @@ int main() {
     }
     X.insert(X.begin(), result);
 
-    for (int i = 0; i < X.size(); i++) {
-        cout << X[i];
+    return X;
+}
+
+int main() {
+    vector<int> A = {1, 4, 8, 3};
+    vector<int> B = {4, 7, 9, 2};
+
+    vector<int> result = precisionInteger(A, B);
+
+    for (int i = 0; i < result.size(); i++) {
+        cout << result[i];
     }
+
     return 0;
 }
